@@ -1,0 +1,24 @@
+{
+  "name": "talk-chicagojs-closures",
+  "version": "0.0.0",
+  "description": "A short talk on closures for Chicago JS MeetUp",
+  "main": "node ./node_modules/tslide/index.js README.md",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:EhevuTov/talk-chicagojs-closures.git"
+  },
+  "keywords": [
+    "talks",
+    "presentations",
+    "closures",
+    "chicago"
+  ],
+  "author": "James Gosnell",
+  "license": "BSD",
+  "dependencies": {
+    "tslide": "*"
+  }
+}
