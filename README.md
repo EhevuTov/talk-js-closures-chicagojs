@@ -2,8 +2,9 @@
 
 
   * wanted someone smarter to teach me about closures
-  
+
     - miscommunicated
+
 
   * jamesgosnell@gmail.com
 
@@ -50,9 +51,10 @@
 
   - Scope
 
-    1. functional scope
+    * functional
 
-    2. lexical scope
+    * lexical
+
 
 
 # Pseudo-Functional
@@ -212,12 +214,20 @@ process.stdin.pipe(process.stdout);
 ```
 
 
+  * unlike, in C, this 'data' variable still exists after execution
+
+  * this 'data' variable is enclosed within the V8 context
+  
+  * this 'data' variable is a closure
+
+
+
 # Javascript No Use Stack Like C
 
   
   * when maker function is called, context is created
 
-  * memory usage keeps growing
+  * DANGER: memory usage keeps growing
 
   * memory leak problems
 
