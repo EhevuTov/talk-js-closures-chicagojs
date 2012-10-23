@@ -1,9 +1,17 @@
 # Javascript Closures
 
 
-  - jamesgosnell@gmail.com (@ehevutov)
-  - noob Javascripter
-  - https://github.com/EhevuTov/talk-js-closures-chicagojs
+  * jamesgosnell@gmail.com
+
+  * @ehevutov
+
+  * noob Javascripter
+
+  * correct me if I'm majorly wrong
+
+    - otherwise, submit a pull request
+
+  * https://github.com/EhevuTov/talk-js-closures-chicagojs
 
 
 # Assumptions
@@ -14,12 +22,14 @@
     - functions
 
     - passing references(values)
+  
+    - scope
 
 
 # Javascript Background
 
 
-  - Functional Language
+  - Functional Language (not really)
   
     * computation is the evaluation of mathematical functions 
 
@@ -30,9 +40,9 @@
 
   - Higher-Order Functions
   
-    * think of functions as values(or references)
-  
     * functions passed and/or returned
+  
+    * think of functions as values(or references)
 
 
   - Scope
@@ -42,14 +52,14 @@
     2. lexical scope
 
 
-  - Stack Frame and Stack Segment
-
-
 # Pseudo-Functional
+
 
 code:
 
+
 ``` js
+
 var state = 0
 
 function changeState() { state++ }
@@ -59,13 +69,21 @@ changeState()
 if( (typeof(state) !== 'undefined') && (0 !== state) ) {
   console.log("Javascript is stateful and mutable")
 }
+
 ```
+
+
+
 
 returns:
 
+
 ```
+
 Javascript is stateful and mutable
+
 ```
+
 
 # High-Order Functions
 
@@ -154,7 +172,6 @@ function makeClosure(data) {
   console.log(util.inspect(process.memoryUsage()));
   return function cbFunc() {
     console.log("made closure: " + data);  
-    console.log(data);
   };
 };
 
@@ -172,7 +189,36 @@ process.stdin.pipe(process.stdout);
   
   * when maker function is called, context is created
 
-  * 
+  * memory usage keeps growing
+
+  * memory leak problems
+
+```
+...
+...
+...
+string: Oh, hai: 9993
+{ rss: 33026048, heapTotal: 15518464, heapUsed: 7540328 }
+made closure: Oh, hai: 9993
+string: Oh, hai: 9994
+{ rss: 33026048, heapTotal: 15518464, heapUsed: 7546920 }
+made closure: Oh, hai: 9994
+string: Oh, hai: 9995
+{ rss: 33026048, heapTotal: 15518464, heapUsed: 7553512 }
+made closure: Oh, hai: 9995
+string: Oh, hai: 9996
+{ rss: 33026048, heapTotal: 15518464, heapUsed: 7560104 }
+made closure: Oh, hai: 9996
+string: Oh, hai: 9997
+{ rss: 33030144, heapTotal: 15518464, heapUsed: 7566696 }
+made closure: Oh, hai: 9997
+string: Oh, hai: 9998
+{ rss: 33030144, heapTotal: 15518464, heapUsed: 7573320 }
+made closure: Oh, hai: 9998
+string: Oh, hai: 9999
+{ rss: 33030144, heapTotal: 15518464, heapUsed: 7579912 }
+made closure: Oh, hai: 9999
+```
 
 
 # Further Closure Research

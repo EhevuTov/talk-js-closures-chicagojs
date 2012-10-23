@@ -7,7 +7,6 @@ function makeClosure(data) {
   console.log(util.inspect(process.memoryUsage()));
   return function cbFunc() {
     console.log("made closure: " + data);  
-    console.log(data);
   };
 };
 
