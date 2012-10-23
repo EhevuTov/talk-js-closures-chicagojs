@@ -1,15 +1,18 @@
 # Javascript Closures
 
 
+  * wanted someone smarter to teach me about closures
+  
+    - miscommunicated
+
   * jamesgosnell@gmail.com
 
   * @ehevutov
 
-  * noob Javascripter
-
   * correct me if I'm majorly wrong
 
     - otherwise, submit a pull request
+
 
   * https://github.com/EhevuTov/talk-js-closures-chicagojs
 
@@ -26,10 +29,10 @@
     - scope
 
 
-# Javascript Background
+# Before We Get to Closures
 
 
-  - Functional Language (not really)
+  - Functional Languages...
   
     * computation is the evaluation of mathematical functions 
 
@@ -87,6 +90,11 @@ Javascript is stateful and mutable
 
 # High-Order Functions
 
+
+  * return a function
+
+
+
 ``` js
 // return a function
 function makeFunc () {
@@ -96,7 +104,17 @@ function makeFunc () {
 
 var func = makeFunc ()
 func ('Oh, hai!')
+```
 
+
+# High-Order Functions
+ 
+
+  * function as an argument
+
+
+
+``` js
 // pass a function as argument
 function highOrderFunc (msg) { console.log(msg) }
 function printHighOrder (func) { func('Oh, hai!') }
@@ -108,7 +126,7 @@ printHighOrder (highOrderFunc)
 # Stack Frame
 
 
-  * a stack structure of pushed data of a function
+  * a stack structure of pushed data of a function, arguments and variables
 
   * placed in the stack segment of mem
 
@@ -120,12 +138,17 @@ printHighOrder (highOrderFunc)
 
     - implementation dependant
 
-  * after function use, data is popped off and garbage collected
+
+  * after function use, stack frame is popped off and garbage collected
 
 
 # Stack Usage Example
 
+
 ```
+
+
+
 
 int i = 0;
 
@@ -140,6 +163,10 @@ int main(void) {
   return 0;
 };
 
+
+
+
+
 ```
 
 # V8 Javascript Runtime
@@ -152,6 +179,7 @@ int main(void) {
     - these are called V8 Contexts
 
       - http://code.google.com/p/v8/source/browse/trunk/src/contexts.h?r=12566#167
+
 
   * uses the OS's heap memory segment
 
@@ -237,9 +265,11 @@ made closure: Oh, hai: 9999
 
     - `delete` keyword
 
+
   * Grokking V8 closures for fun (and profit?)
 
     - http://mrale.ph/blog/2012/09/23/grokking-v8-closures-for-fun.html
+
 
   * Picking Up Javascript - Closures and Lexical Scoping
 
